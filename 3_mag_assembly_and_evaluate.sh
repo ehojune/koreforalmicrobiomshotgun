@@ -119,16 +119,17 @@ for sample in $samples
 do
   mkdir -p ${output_5}/megahit/${sample}
   touch ${scripts}/${sample}.megahit_quast.sh
-  echo $quast ${output_2}/${sample}/${sample}.megahit_asm/final.contigs.fa -o ${output_5}/megahit/${sample} > ${scripts}/${sample}.megahit_quast.sh
+  echo /BiO/Access/ehojune/anaconda3/bin/python3 $quast ${output_2}/${sample}/${sample}.megahit_asm/final.contigs.fa -o ${output_5}/megahit/${sample} -t 16 > ${scripts}/${sample}.megahit_quast.sh
   qsub -cwd -pe smp 16 ${scripts}/${sample}.megahit_quast.sh
 
-  mkdir -p ${output_5}/metaspades/${sample}
-  touch ${scripts}/${sample}.metaspades_quast.sh
-  echo $quast ${output_3}/${sample}/${sample}.metaspades_asm/final.contigs.fa -o ${output_5}/megahit/${sample} > ${scripts}/${sample}.megahit_quast.sh
-  qsub -cwd -pe smp 16 ${scripts}/${sample}.megahit_quast.sh
+  #mkdir -p ${output_5}/metaspades/${sample}
+  #touch ${scripts}/${sample}.metaspades_quast.sh
+  #echo $quast ${output_3}/${sample}/${sample}.metaspades_asm/final.contigs.fa -o ${output_5}/megahit/${sample} > ${scripts}/${sample}.megahit_quast.sh
+  #qsub -cwd -pe smp 16 ${scripts}/${sample}.megahit_quast.sh
   
   
 done
+echo "finish submitting quast"
 
 
 
@@ -137,8 +138,7 @@ done
 
 
 
-
-
+:<<'END'
 
 echo "done"
 
@@ -157,16 +157,7 @@ do
 done
 echo "done"
 
-
-
-
-
-
-
-
-
-
-
+END
 
 
 
