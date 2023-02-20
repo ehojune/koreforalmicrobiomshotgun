@@ -1,0 +1,41 @@
+Read1 before filtering:
+total reads: 51442274
+total bases: 7767783374
+Q20 bases: 7609814083(97.9664%)
+Q30 bases: 7303342524(94.0209%)
+
+Read2 before filtering:
+total reads: 51442274
+total bases: 7767783374
+Q20 bases: 7527572818(96.9076%)
+Q30 bases: 7113057708(91.5713%)
+
+Read1 after filtering:
+total reads: 51002911
+total bases: 7028029901
+Q20 bases: 6889611411(98.0305%)
+Q30 bases: 6608546920(94.0313%)
+
+Read2 after filtering:
+total reads: 51002911
+total bases: 7027726283
+Q20 bases: 6827827529(97.1556%)
+Q30 bases: 6446560066(91.7304%)
+
+Filtering result:
+reads passed filter: 102005822
+reads failed due to low quality: 826278
+reads failed due to too many N: 11492
+reads failed due to too short: 40956
+reads with adapter trimmed: 763368
+bases trimmed due to adapters: 20054329
+
+Duplication rate: 2.39127%
+
+Insert size peak (evaluated by paired-end reads): 271
+
+JSON report: /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/1_fastp_afterTrimming/KorefMicrobiomeShotgun2/KorefMicrobiomeShotgun2.json
+HTML report: /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/1_fastp_afterTrimming/KorefMicrobiomeShotgun2/KorefMicrobiomeShotgun2.html
+
+/BiO/Access/ehojune/anaconda3/bin/fastp -i /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/raw_data/KorefMicrobiomeShotgun2/KorefMicrobiomeShotgun2_1.fq.gz -I /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/raw_data/KorefMicrobiomeShotgun2/KorefMicrobiomeShotgun2_2.fq.gz -o /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/1_fastp_afterTrimming/KorefMicrobiomeShotgun2/KorefMicrobiomeShotgun2_1.fq.gz -O /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/1_fastp_afterTrimming/KorefMicrobiomeShotgun2/KorefMicrobiomeShotgun2_2.fq.gz --html /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/1_fastp_afterTrimming/KorefMicrobiomeShotgun2/KorefMicrobiomeShotgun2.html --json /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/1_fastp_afterTrimming/KorefMicrobiomeShotgun2/KorefMicrobiomeShotgun2.json --report_title KorefMicrobiomeShotgun2_after --overrepresentation_analysis --trim_front1 10 --trim_front2 10 --cut_window_size 4 --cut_mean_quality 20 --n_base_limit 0 --thread 16 --cut_front --average_qual 20 
+fastp v0.22.0, time used: 880 seconds
