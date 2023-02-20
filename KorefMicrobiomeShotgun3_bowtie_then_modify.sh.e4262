@@ -1,0 +1,26 @@
+/opt/GridEngine/default/spool/Shrimp/job_scripts/4262: 1: cannot create KorefMicrobiomeShotgun3/KorefMicrobiomeShotgun3_mapped_and_unmapped.bam: Directory nonexistent
+/opt/GridEngine/default/spool/Shrimp/job_scripts/4262: 2: cannot create KorefMicrobiomeShotgun3/KorefMicrobiomeShotgun3_bothEndsUnmapped.bam: Directory nonexistent
+[bam_sort] Use -T PREFIX / -o FILE to specify temporary and final output files
+Usage: samtools sort [options...] [in.bam]
+Options:
+  -l INT     Set compression level, from 0 (uncompressed) to 9 (best)
+  -m INT     Set maximum memory per thread; suffix K/M/G recognized [768M]
+  -n         Sort by read name
+  -t TAG     Sort by value of TAG. Uses position as secondary index (or read name if -n is set)
+  -o FILE    Write final output to FILE rather than standard output
+  -T PREFIX  Write temporary files to PREFIX.nnnn.bam
+      --input-fmt-option OPT[=VAL]
+               Specify a single input file format option in the form
+               of OPTION or OPTION=VALUE
+  -O, --output-fmt FORMAT[,OPT[=VAL]]...
+               Specify output format (SAM, BAM, CRAM)
+      --output-fmt-option OPT[=VAL]
+               Specify a single output file format option in the form
+               of OPTION or OPTION=VALUE
+      --reference FILE
+               Reference sequence FASTA FILE [null]
+  -@, --threads INT
+               Number of additional threads to use [0]
+Error: The first fastq file (KorefMicrobiomeShotgun3/KorefMicrobiomeShotgun3_host_removed_r1.fq) could not be opened.  Exiting!
+gzip: KorefMicrobiomeShotgun3/KorefMicrobiomeShotgun3_host_removed_r1.fq: No such file or directory
+gzip: KorefMicrobiomeShotgun3/KorefMicrobiomeShotgun3_host_removed_r2.fq: No such file or directory

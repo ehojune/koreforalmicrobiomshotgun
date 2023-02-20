@@ -1,0 +1,25 @@
+
+
+== Error ==  utf-8
+
+Traceback (most recent call last):
+  File "/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/share/spades/spades_pipeline/support.py", line 166, in check_file_not_empty
+    if next(reads_iterator, None) is None:
+  File "/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/share/spades/spades_pipeline/common/SeqIO.py", line 119, in parse_fastq
+    while not reader.EOF():
+  File "/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/share/spades/spades_pipeline/common/SeqIO.py", line 69, in EOF
+    return self.Top() == ""
+  File "/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/share/spades/spades_pipeline/common/SeqIO.py", line 36, in Top
+    self.FillCash()
+  File "/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/share/spades/spades_pipeline/common/SeqIO.py", line 30, in FillCash
+    self.cash = self.handler.readline()
+  File "/BiO/Access/ehojune/anaconda3/lib/python3.9/codecs.py", line 558, in readline
+    data = self.read(readsize, firstline=True)
+  File "/BiO/Access/ehojune/anaconda3/lib/python3.9/codecs.py", line 504, in read
+    newchars, decodedbytes = self.decode(data, self.errors)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
+
+
+In case you have troubles running SPAdes, you can write to spades.support@cab.spbu.ru
+or report an issue on our GitHub repository github.com/ablab/spades
+Please provide us with params.txt and spades.log files from the output directory.
