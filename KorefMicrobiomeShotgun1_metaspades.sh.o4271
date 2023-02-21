@@ -1,0 +1,107 @@
+Command line: /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/metaspades.py	--meta	-1	/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/2_bowtie_modified/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1_host_removed_r1.fq.gz	-2	/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/2_bowtie_modified/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1_host_removed_r2.fq.gz	-o	/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/3_2_metaspades/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1.metaspades_asm	-t	100	--memory	3000	
+
+System information:
+  SPAdes version: 3.15.5
+  Python version: 3.9.13
+  OS: Linux-5.15.0-43-generic-x86_64-with-glibc2.35
+
+Output dir: /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/3_2_metaspades/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1.metaspades_asm
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Metagenomic mode
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/2_bowtie_modified/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1_host_removed_r1.fq.gz']
+      right reads: ['/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/2_bowtie_modified/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1_host_removed_r2.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/3_2_metaspades/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1.metaspades_asm/tmp
+  Threads: 100
+  Memory limit (in Gb): 3000
+
+
+======= SPAdes pipeline started. Log can be found here: /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/3_2_metaspades/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1.metaspades_asm/spades.log
+
+/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/2_bowtie_modified/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1_host_removed_r1.fq.gz: max reads length: 176
+/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/2_bowtie_modified/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1_host_removed_r2.fq.gz: max reads length: 174
+
+Reads length: 176
+
+
+===== Before start started. 
+
+
+===== Read error correction started. 
+
+
+===== Read error correction started. 
+
+
+== Running: /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/spades-hammer /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/3_2_metaspades/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1.metaspades_asm/corrected/configs/config.info
+
+  0:00:00.000     1M / 23M   INFO    General                 (main.cpp                  :  75)   Starting BayesHammer, built from refs/heads/spades_3.15.5, git revision e757b8216f9a038fb616e9551a2d4891b2d19ad7
+  0:00:00.054     1M / 23M   INFO    General                 (main.cpp                  :  76)   Loading config from /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/3_2_metaspades/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1.metaspades_asm/corrected/configs/config.info
+  0:00:00.086     1M / 23M   INFO    General                 (main.cpp                  :  78)   Maximum # of threads to use (adjusted due to OMP capabilities): 100
+  0:00:00.102     1M / 23M   INFO    General                 (memory_limit.cpp          :  54)   Memory limit set to 3000 Gb
+  0:00:00.102     1M / 23M   INFO    General                 (main.cpp                  :  86)   Trying to determine PHRED offset
+  0:00:00.131     1M / 23M   INFO    General                 (main.cpp                  :  92)   Determined value is 33
+  0:00:00.131     1M / 23M   INFO    General                 (hammer_tools.cpp          :  38)   Hamming graph threshold tau=1, k=21, subkmer positions = [ 0 10 ]
+  0:00:00.131     1M / 23M   INFO    General                 (main.cpp                  : 113)   Size of aux. kmer data 24 bytes
+     === ITERATION 0 begins ===
+  0:00:00.132     1M / 23M   INFO   K-mer Counting           (kmer_data.cpp             : 283)   Estimating k-mer count
+  0:00:01.195  1601M / 1606M INFO   K-mer Counting           (kmer_data.cpp             : 288)   Processing /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/2_bowtie_modified/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1_host_removed_r1.fq.gz
+  0:00:04.511  1601M / 1609M INFO   K-mer Counting           (kmer_data.cpp             : 297)   Processed 622635 reads
+  0:00:04.513  1601M / 1609M INFO   K-mer Counting           (kmer_data.cpp             : 288)   Processing /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/2_bowtie_modified/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1_host_removed_r2.fq.gz
+  0:00:08.148  1601M / 1609M INFO   K-mer Counting           (kmer_data.cpp             : 297)   Processed 1245270 reads
+  0:00:08.150  1601M / 1609M INFO   K-mer Counting           (kmer_data.cpp             : 302)   Total 1245270 reads processed
+  0:00:10.926  1601M / 1609M INFO   K-mer Counting           (kmer_data.cpp             : 305)   Estimated 204225887 distinct kmers
+  0:00:10.942     1M / 1609M INFO   K-mer Counting           (kmer_data.cpp             : 309)   Filtering singleton k-mers
+  0:00:11.225   653M / 1609M INFO   K-mer Counting           (kmer_data.cpp             : 315)   Processing /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/2_bowtie_modified/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1_host_removed_r1.fq.gz
+  0:01:41.058   654M / 1609M INFO   K-mer Counting           (kmer_data.cpp             : 324)   Processed 622635 reads
+  0:01:41.060   653M / 1609M INFO   K-mer Counting           (kmer_data.cpp             : 315)   Processing /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/2_bowtie_modified/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1_host_removed_r2.fq.gz
+  0:03:00.579   654M / 1609M INFO   K-mer Counting           (kmer_data.cpp             : 324)   Processed 1245270 reads
+  0:03:00.581   653M / 1609M INFO   K-mer Counting           (kmer_data.cpp             : 329)   Total 1245270 reads processed
+  0:03:00.582   653M / 1609M INFO    General                 (kmer_index_builder.hpp    : 243)   Splitting kmer instances into 16 files using 100 threads. This might take a while.
+The program was terminated by segmentation fault
+=== Stack Trace ===
+/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/spades-hammer() [0x421e29]
+/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/spades-hammer() [0x423956]
+/lib/x86_64-linux-gnu/libc.so.6(+0x42520) [0x14a483941520]
+/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/spades-hammer(cfree+0x10) [0x4849a0]
+/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/spades-hammer() [0x494ffe]
+/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/spades-hammer() [0x495c65]
+/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/spades-hammer() [0x460f67]
+/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/spades-hammer() [0x450515]
+/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/spades-hammer() [0x461d47]
+/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/spades-hammer() [0x459266]
+/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/spades-hammer() [0x416300]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x14a483928d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x14a483928e40]
+/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/spades-hammer() [0x420681]
+
+
+== Error ==  system call for: "['/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.5-Linux/bin/spades-hammer', '/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/3_2_metaspades/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1.metaspades_asm/corrected/configs/config.info']" finished abnormally, OS return value: -11
+
+
+In case you have troubles running SPAdes, you can write to spades.support@cab.spbu.ru
+or report an issue on our GitHub repository github.com/ablab/spades
+Please provide us with params.txt and spades.log files from the output directory.
+
+SPAdes log can be found here: /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/3_2_metaspades/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1.metaspades_asm/spades.log
+
+Thank you for using SPAdes!
