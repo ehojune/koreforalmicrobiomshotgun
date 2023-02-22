@@ -34,12 +34,12 @@ do
   touch  ${scripts}${sample}_bowtie_then_modify.sh
   echo $samtools view -bS ${output_2}${sample}/${sample}_mapped_and_unmapped.sam \> ${output_2}${sample}/${sample}_mapped_and_unmapped.bam > ${scripts}${sample}_bowtie_then_modify.sh
   echo $samtools view -b -f 12 -F 256 ${output_2}${sample}/${sample}_mapped_and_unmapped.bam \> ${output_2}${sample}/${sample}_bothEndsUnmapped.bam >> ${scripts}${sample}_bowtie_then_modify.sh
-  echo $samtools sort -n ${output_2}${sample}/${sample}_bothEndsUnmapped.bam ${output_2}${sample}/${sample}_bothEndsUnmapped.sorted.bam >> ${scripts}${sample}_bowtie_then_modify.sh
+  echo $samtools sort -n ${output_2}${sample}/${sample}_bothEndsUnmapped.bam -o ${output_2}${sample}/${sample}_bothEndsUnmapped.sorted.bam >> ${scripts}${sample}_bowtie_then_modify.sh
   echo $bedtools bamtofastq -i ${output_2}${sample}/${sample}_bothEndsUnmapped.sorted.bam -fq ${output_2}${sample}/${sample}_host_removed_r1.fq -fq2 ${output_2}${sample}/${sample}_host_removed_r2.fq >> ${scripts}${sample}_bowtie_then_modify.sh
   echo gzip ${output_2}${sample}/${sample}_host_removed_r1.fq >> ${scripts}${sample}_bowtie_then_modify.sh
   echo gzip ${output_2}${sample}/${sample}_host_removed_r2.fq >> ${scripts}${sample}_bowtie_then_modify.sh
 
-  qsub -cwd  ${scripts}${sample}_bowtie_then_modify.sh
+  qsub -pe smp 64-cwd  ${scripts}${sample}_bowtie_then_modify.sh
 done
 echo "done"
 

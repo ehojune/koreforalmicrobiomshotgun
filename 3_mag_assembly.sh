@@ -30,6 +30,10 @@ python="/BiO/Access/ehojune/anaconda3/bin/python"
 
 
 
+
+
+
+
 #3_1. megahit
 
 
@@ -51,6 +55,9 @@ echo "done"
 
 
 
+
+:<<'END'
+
 #3_2. metaspades
 
 
@@ -70,4 +77,5 @@ do
 done
 echo "done"
 
+END
 #4. quast
