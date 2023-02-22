@@ -1,6 +1,0 @@
-kraken2: --paired requires positive and even number filenames
-tput: No value for $TERM and no -T specified
-[ ERROR ] 
-           Couldn't
-           open
-           "/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/4_1_species_beforeRemoval/KorefMicrobiomeShotgun3/KorefMicrobiomeShotgun3.kraken2.tsv".

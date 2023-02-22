@@ -1,3 +1,0 @@
-export PATH=/BiO/Access/ehojune/anaconda3/bin/python:$PATH
-export PYTHONPATH=$PYTHONPATH:/BiO/Access/ehojune/anaconda3/bin/python
-/BiO/Access/ehojune/anaconda3/bin/megahit -1 /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/2_bowtie/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1_host_removed_r1.fq -2 /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/2_bowtie/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1_host_removed_r2.fq -o /BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/3_1_megahit/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1.megahit_asm --memory 0.1 -t 60

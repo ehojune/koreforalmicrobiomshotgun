@@ -1,5 +1,0 @@
-Loading database information... done.
-11383168 sequences (3978.55 Mbp) processed in 90.076s (7582.4 Kseq/m, 2650.14 Mbp/m).
-  11304530 sequences classified (99.31%)
-  78638 sequences unclassified (0.69%)
-tput: No value for $TERM and no -T specified
