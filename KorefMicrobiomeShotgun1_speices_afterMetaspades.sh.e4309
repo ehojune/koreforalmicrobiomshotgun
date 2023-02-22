@@ -1,0 +1,91 @@
+Loading database information... done.
+157177 sequences (57.52 Mbp) processed in 1.497s (6299.3 Kseq/m, 2305.13 Mbp/m).
+  131051 sequences classified (83.38%)
+  26126 sequences unclassified (16.62%)
+tput: No value for $TERM and no -T specified
+   [ WARNING ] 
+                Score
+                column
+                already
+                in
+                use;
+                not
+                reading
+                scores.
+   [ WARNING ] 
+                The
+                following
+                taxonomy
+                IDs
+                were
+                not
+                found
+                in
+                the
+                local
+                database
+                and
+                were
+                set
+                to
+                root
+                (if
+                they
+                were
+                recently
+                added
+                to
+                NCBI,
+                use
+                updateTaxonomy.sh
+                to
+                update
+                the
+                local
+                database):
+                1109743
+                2486714
+                2478746
+                1535326
+                1118061
+                2052837
+                1476577
+                2269045
+                260811
+                1823756
+                2493692
+                339724
+                2339229
+                1433516
+                1156433
+                2485489
+                2071625
+                2321108
+                1261640
+                1898205
+                2053043
+                1705700
+                2080845
+                2080847
+                2080849
+                2080846
+                46170
+                1349774
+                166974
+                2080848
+                1490476
+                1853279
+   [ WARNING ] 
+                Too
+                many
+                query
+                IDs
+                to
+                store
+                in
+                chart;
+                storing
+                supplemental
+                files
+                in
+                '/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/4_4_species_afterMetaspades/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1.kronaReport.html.files'.

@@ -39,7 +39,7 @@ do
   echo gzip ${output_2}${sample}/${sample}_host_removed_r1.fq >> ${scripts}${sample}_bowtie_then_modify.sh
   echo gzip ${output_2}${sample}/${sample}_host_removed_r2.fq >> ${scripts}${sample}_bowtie_then_modify.sh
 
-  qsub -pe smp 64-cwd  ${scripts}${sample}_bowtie_then_modify.sh
+  qsub -pe smp 64 -cwd  ${scripts}${sample}_bowtie_then_modify.sh
 done
 echo "done"
 

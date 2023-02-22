@@ -1,0 +1,19 @@
+Loading database information... done.
+62385979 sequences (18007.16 Mbp) processed in 385.791s (9702.6 Kseq/m, 2800.56 Mbp/m).
+  61032642 sequences classified (97.83%)
+  1353337 sequences unclassified (2.17%)
+tput: No value for $TERM and no -T specified
+   [ WARNING ] 
+                Too
+                many
+                query
+                IDs
+                to
+                store
+                in
+                chart;
+                storing
+                supplemental
+                files
+                in
+                '/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/4_1_species_beforeRemoval/KorefMicrobiomeShotgun3/KorefMicrobiomeShotgun3.kronaReport.html.files'.

@@ -1,0 +1,73 @@
+Loading database information... done.
+37741 sequences (23.16 Mbp) processed in 1.484s (1525.8 Kseq/m, 936.14 Mbp/m).
+  35501 sequences classified (94.06%)
+  2240 sequences unclassified (5.94%)
+tput: No value for $TERM and no -T specified
+   [ WARNING ] 
+                Score
+                column
+                already
+                in
+                use;
+                not
+                reading
+                scores.
+   [ WARNING ] 
+                The
+                following
+                taxonomy
+                IDs
+                were
+                not
+                found
+                in
+                the
+                local
+                database
+                and
+                were
+                set
+                to
+                root
+                (if
+                they
+                were
+                recently
+                added
+                to
+                NCBI,
+                use
+                updateTaxonomy.sh
+                to
+                update
+                the
+                local
+                database):
+                2080846
+                1156433
+                1705700
+                2321108
+                1476577
+                2080849
+                2052837
+                2080845
+                46170
+                1433516
+                166974
+                2486714
+                2080848
+                2269045
+   [ WARNING ] 
+                Too
+                many
+                query
+                IDs
+                to
+                store
+                in
+                chart;
+                storing
+                supplemental
+                files
+                in
+                '/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/processed_data/4_3_species_afterMegahit/KorefMicrobiomeShotgun1/KorefMicrobiomeShotgun1.kronaReport.html.files'.

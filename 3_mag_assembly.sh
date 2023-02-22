@@ -16,7 +16,7 @@ sample3="KorefMicrobiomeShotgun3"
 ### programs ###
 
 fastp="/BiO/Access/ehojune/anaconda3/bin/fastp"
-megahit="/BiO/Access/ehojune/anaconda3/bin/megahit"
+megahit="/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit"
 spades="/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/SPAdes-3.15.2-Linux/bin/metaspades.py"
 
 quast="/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/quast/quast.py"
@@ -37,7 +37,7 @@ python="/BiO/Access/ehojune/anaconda3/bin/python"
 #3_1. megahit
 
 
-output_2=${output}2_bowtie_modified/
+output_2=${output}2_bowtie_rerun/
 output_3_1=${output}3_1_megahit/
 
 echo "start megahit"
@@ -47,7 +47,7 @@ do
   touch  ${scripts}${sample}_megahit.sh
   echo export PATH=${python}:\$PATH > ${scripts}${sample}_megahit.sh
   echo export PYTHONPATH=\$PYTHONPATH:${python} >> ${scripts}${sample}_megahit.sh
-  echo $megahit -1 ${output_2}${sample}/${sample}_host_removed_r1.fq.gz -2 ${output_2}${sample}/${sample}_host_removed_r2.fq.gz -o ${output_3_1}${sample}/${sample}.megahit_asm --memory 0.1 -t 60 >> ${scripts}${sample}_megahit.sh
+  echo $python $megahit -1 ${output_2}${sample}/${sample}_host_removed_r1.fq.gz -2 ${output_2}${sample}/${sample}_host_removed_r2.fq.gz -o ${output_3_1}${sample}/${sample}.megahit_asm --memory 0.1 -t 60 >> ${scripts}${sample}_megahit.sh
   qsub -cwd -pe smp 60 ${scripts}${sample}_megahit.sh
 done
 echo "done"
