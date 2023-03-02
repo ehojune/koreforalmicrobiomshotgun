@@ -23,7 +23,7 @@ bedtools="/BiO/Access/ehojune/anaconda3/bin/bedtools"
 kraken2="/BiO/Access/ehojune/anaconda3/bin/kraken2"
 krona="/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/Krona/KronaTools/bin/ktImportTaxonomy"
 python="/BiO/Access/ehojune/anaconda3/bin/python"
-
+busco="/BiO/Access/ehojune/anaconda3/envs/buscogogo/bin/busco"
 
 ### commands ###
 
@@ -45,8 +45,13 @@ output_4_4=${output}/4_4_species_afterMetaspades/
 output_5_1=${output}/5_1_quast_megahit/
 output_5_2=${output}/5_2_quast_metaspades/
 
+output_6_1=${output}/6_1_busco_megahit/
+output_6_2=${output}/6_2_busco_metaspades/
 
+output_7_1=${output}/7_1_bbmap_megahit/
+output_7_2=${output}/7_2_bbmap_metaspades/
 
+:<<'END'
 
 #5-1. quast for megahit
 mkdir -p $output_5_1
@@ -75,4 +80,47 @@ do
   qsub -cwd -pe smp 16 ${scripts}${sample}_quast_metaspades.sh
 done
 echo "done"
+
+
+
+
+END
+
+
+
+
+#6-1. busco for megahit
+## This should be done in seperate env, manually (not using qsub but "sh [buscofile.sh]" )
+## See commands under "Alternatively you can create a new environment with BUSCO installed" sentence in   https://busco.ezlab.org/busco_userguide.html 
+
+mkdir -p $output_6_1
+
+echo "start writing busco scripts for megahit"
+for sample in $samples
+do
+  mkdir -p ${output_6_1}${sample}
+  touch ${scripts}${sample}_busco_megahit.sh
+  echo $busco -i ${output_3_1}/${sample}/${sample}.megahit_asm/final.contigs.fa -o ${output_6_1}/${sample} --auto-lineage -m genome -c 100 > ${scripts}${sample}_busco_megahit.sh
+
+done
+echo "done"
+
+
+#6-2. busco for metaspades
+## This should be done in seperate env, manually (not using qsub but "sh [buscoshellfile.sh]" )
+## See commands under "Alternatively you can create a new environment with BUSCO installed" sentence in   https://busco.ezlab.org/busco_userguide.html 
+
+mkdir -p $output_6_2
+
+echo "start writing busco scripts for metaspades"
+for sample in $samples
+do
+  mkdir -p ${output_6_2}${sample}
+  touch ${scripts}${sample}_busco_metaspades.sh
+  echo $busco -i ${output_3_2}/${sample}/${sample}.metaspades_asm/scaffolds.fasta -o ${output_6_2}/${sample} --auto-lineage -m genome -c 100 > ${scripts}${sample}_busco_metaspades.sh
+
+done
+echo "done"
+
+
 
