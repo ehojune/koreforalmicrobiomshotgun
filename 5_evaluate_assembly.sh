@@ -24,6 +24,9 @@ kraken2="/BiO/Access/ehojune/anaconda3/bin/kraken2"
 krona="/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/Krona/KronaTools/bin/ktImportTaxonomy"
 python="/BiO/Access/ehojune/anaconda3/bin/python"
 busco="/BiO/Access/ehojune/anaconda3/envs/buscogogo/bin/busco"
+bbwrap="/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/bbmap/bbwrap.sh"
+bbmappileup="/BiO/Research/Project1/KOREF_PersonalMultiomicsReference/Workspace/ehojune/tools/bbmap/pileup.sh"
+checkm="/BiO/Access/ehojune/anaconda3/bin/checkm"
 
 ### commands ###
 
@@ -50,6 +53,9 @@ output_6_2=${output}/6_2_busco_metaspades/
 
 output_7_1=${output}/7_1_bbmap_megahit/
 output_7_2=${output}/7_2_bbmap_metaspades/
+
+output_8_1=${output}/8_1_checkM_megahit/
+output_8_1=${output}/8_1_checkM_metaspades/
 
 :<<'END'
 
@@ -84,7 +90,7 @@ echo "done"
 
 
 
-END
+
 
 
 
@@ -121,6 +127,58 @@ do
 
 done
 echo "done"
+
+END
+
+
+
+#7-1. bbmap for megahit
+#CheckM was installed to ehojune's conda env on shrimp, referring https://github.com/Ecogenomics/CheckM/wiki/Installation#installation-through-pip
+
+
+
+mkdir -p $output_7_1
+
+echo "start writing bbmap scripts for megahit"
+for sample in $samples
+do
+  mkdir -p ${output_7_1}${sample}
+  touch ${scripts}${sample}_bbmap_megahit.sh
+  echo $bbwrap ref=${output_3_1}/${sample}/${sample}.megahit_asm/final.contigs.fa in=${output_2}/${sample}/${sample}_host_removed_r1.fq.gz in2=${output_2}/${sample}/${sample}_host_removed_r2.fq.gz out=${output_7_1}/${sample}/${sample}.bbmap.aln.sam.gz kfilter=22 subfilter=15 maxindel=80 >> ${scripts}${sample}_bbmap_megahit.sh
+  echo $bbmappileup in=${output_7_1}/${sample}/${sample}.bbmap.aln.sam.gz out=${output_7_1}/${sample}/${sample}.cov.txt >> ${scripts}${sample}_bbmap_megahit.sh
+  echo $samtools view -u -f4 ${output_7_1}/${sample}/${sample}.bbmap.aln.sam.gz | $samtools bam2fq    >> ${scripts}${sample}_bbmap_megahit.sh
+  qsub -cwd -pe smp 16 ${scripts}${sample}_bbmap_megahit.sh
+
+done
+echo "done"
+
+
+
+
+$bbwrap ref=SRR341725.megahit_asm/final.contigs.fa in=SRR341725_1.fastq.gz in2=SRR341725_2.fastq.gz out=aln.sam.gz kfilter=22 subfilter=15 maxindel=80
+$bbmappileup in=aln.sam.gz out=cov.txt
+samtools-1.2/samtools view -u -f4 aln.sam.gz | samtools-1.2/samtools bam2fq -s unmapped.se.fq - > unmapped.pe.fq
+# trying to change: use gatk instead of samtools
+java -jar picard.jar qsub I=merged.dedup.realn.bam FASTQ=output.samtools.bam2fq_R1.fastq --SECOND_END_FASTQ=outout.samtools.bam2fq_R2.fastq
+
+
+
+
+#7-2. bbmap for metaspades
+
+
+
+
+
+
+#8-1. checkM for megahit
+#CheckM was installed to ehojune's conda env on shrimp, referring https://github.com/Ecogenomics/CheckM/wiki/Installation#installation-through-pip
+
+
+
+
+
+#8-2. checkM for metaspades
 
 
 
